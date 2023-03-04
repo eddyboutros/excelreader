@@ -3,7 +3,7 @@ currYear.innerHTML = new Date().getFullYear().toString();
 
 function showExcelFiles()
 {
-    fetch("http://localhost:8080/getAvailableExcelFiles")
+    fetch("https://excel-apis.onrender.com/getAvailableExcelFiles")
         .then(response => response.json())
         .then(data =>
 		{
@@ -33,7 +33,7 @@ function onFileChange() {
     });
   
     var fileName = document.getElementById("excelFiles").value;
-    fetch("http://localhost:8080/readExcelData/" + fileName)
+    fetch("https://excel-apis.onrender.com/readExcelData/" + fileName)
       .then((response) => response.json())
       .then((data) => {
         var size = data.length;
